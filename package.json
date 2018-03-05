@@ -10,8 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-wifi-scanner": "^1.0.0",
+    "node-wifi": "^2.0.4",
     "ora": "^2.0.0",
-    "prompt": "^1.0.0"
+    "prompt": "^1.0.0",
+    "prompts": "^0.1.4"
   }
 }
