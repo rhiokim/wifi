@@ -2,7 +2,10 @@
   "name": "with-good-wifi",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bin/index.js",
+  "bin": {
+    "office": "bin/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,9 +13,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "meow": "^4.0.0",
     "node-wifi": "^2.0.4",
     "ora": "^2.0.0",
-    "prompt": "^1.0.0",
     "prompts": "^0.1.4"
   }
 }
