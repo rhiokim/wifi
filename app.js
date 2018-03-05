@@ -10,16 +10,14 @@ wifi.init({
   iface: null
 })
 
-wifi.scan((err, networks) => {
+wifi.scan(async (err, networks) => {
   if (err) {
     console.error(err);
     return;
   }
 
   let res = networks
-    .sort((a, b) => a.signal_level - b.signal_level);
-
-  spinner.succeed('Changing SSID for Your Machine');
+    .sort((a, b) => b.signal_level - a.signal_level);
 
   res = res.map(net => {
     return {
@@ -29,11 +27,32 @@ wifi.scan((err, networks) => {
     }
   })
 
-  const response = prompt({
-    type: 'select',
-    name: 'value',
-    message: 'Pick a Wifi',
-    choices: res
-  });
+  spinner.stop();
 
+  const choice = await prompt([
+    {
+      type: 'select',
+      name: 'ssid',
+      message: 'Pick a Wifi',
+      choices: res
+    },
+    {
+      type: 'password',
+      name: 'password',
+      message: 'Tell me wifi password',
+      initial: '',
+    }
+  ]);
+
+  spinner.text = `Connecting into ${choice.ssid} Wifi`;
+  spinner.start();
+
+  wifi.connect({ ssid : choice.ssid, password : choice.password }, function(err) {
+    if (err) {
+      console.log(err);
+      throw err
+    }
+
+    spinner.succeed(`Connected ${choice.ssid} SSID`);
+  });
 });
