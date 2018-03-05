@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-wifi-scanner": "^1.0.0",
+    "ora": "^2.0.0",
+    "prompt": "^1.0.0"
+  }
 }
