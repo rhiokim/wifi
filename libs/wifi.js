@@ -1,7 +1,8 @@
 const prompt = require('prompts');
 const wifi = require('node-wifi');
 const ora = require('ora');
-const chalk = require('chalk')
+const chalk = require('chalk');
+const sigEmoji = require('../helpers/signal-level-emoji')
 
 module.exports = (flags) => {
   const spinner = ora('Searching Best Wifi for You...').start();
@@ -20,10 +21,14 @@ module.exports = (flags) => {
     let res = networks
       .sort((a, b) => b.signal_level - a.signal_level);
 
+    if (flags.filter) {
+      res = res.filter(net => net.ssid.indexOf(flags.filter) > -1)
+    }
+
     res = res.map(net => {
       return {
         ...net,
-        title: `${net.ssid} ${chalk.grey(net.signal_level)}`,
+        title: `${sigEmoji(net.signal_level)}  ${net.ssid}`,
         value: net.ssid
       }
     })

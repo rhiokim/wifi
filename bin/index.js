@@ -15,7 +15,7 @@ const cli = meow(`
       --filter, -f  Filter by
 
     Examples
-      $ office wifi --auto-connect
+      $ office wifi --filter=iptime
       🌈 unicorns 🌈
 `, {
     flags: {
