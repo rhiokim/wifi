@@ -1,10 +1,10 @@
 {
-  "name": "with-good-wifi",
+  "name": "wifi-finder",
   "version": "1.0.0",
   "description": "",
   "main": "bin/index.js",
   "bin": {
-    "office": "bin/index.js"
+    "wifi": "bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

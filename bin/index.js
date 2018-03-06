@@ -26,9 +26,5 @@ const cli = meow(`
     }
 });
 
-switch(cli.input[0]) {
-  case 'wifi':
-    wifi(cli.flags)
-  break;
-}
+wifi(cli.flags)
 
