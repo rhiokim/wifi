@@ -19,26 +19,14 @@ const cli = meow(`
       🌈 unicorns 🌈
 `, {
     flags: {
-      'auto-connect': {
-        type: 'boolean',
-        alias: 'a',
-        default: false
-      },
       filter: {
         type: 'string',
         alias: 'f'
-      },
-      sort: {
-        type: 'string',
-        alias: 's',
-        default: 'desc'
       }
     }
 });
 
 switch(cli.input[0]) {
-  case 'git':
-  break;
   case 'wifi':
     wifi(cli.flags)
   break;
