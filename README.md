@@ -3,7 +3,7 @@
 Good Wifi Finder near by your machine
 
 <center>
-  <img src="./medias/usage.gif" />
+  <img src="./media/usage.gif" />
 </center>
 
 ## Developement
