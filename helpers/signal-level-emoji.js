@@ -3,12 +3,14 @@ module.exports = level => {
     case level > -30:
       return '👍🏻'
     case level <= -30 && level > -50:
-      return '🙂'
+      return '😃'
     case level <= -50 && level > -70:
+      return '🙂'
+    case level <= -70 && level > -95:
       return '😡'
-    case level <= -70 && level > -90:
+    case level <= -95 && level > -120:
       return '🤯'
-    case level <= -90 && level > -100:
+    case level <= -120 && level > -160:
       return '😱'
     default:
       return '🤔'

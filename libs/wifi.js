@@ -5,7 +5,7 @@ const chalk = require('chalk');
 const sigEmoji = require('../helpers/signal-level-emoji')
 
 module.exports = (flags) => {
-  const spinner = ora('Searching Best Wifi for You...').start();
+  const spinner = ora('Searching Wifi ...').start();
   spinner.color = 'yellow';
 
   wifi.init({
@@ -28,7 +28,7 @@ module.exports = (flags) => {
     res = res.map(net => {
       return {
         ...net,
-        title: `${sigEmoji(net.signal_level)}  ${net.ssid}`,
+        title: `${net.ssid} ${sigEmoji(net.signal_level)}`,
         value: net.ssid
       }
     })
@@ -37,7 +37,7 @@ module.exports = (flags) => {
 
     const choice = await prompt([
       {
-        type: 'select',
+        type: 'autocomplete',
         name: 'ssid',
         message: 'Pick a Wifi',
         choices: res
