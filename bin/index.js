@@ -2,7 +2,16 @@
 'use strict';
 
 const meow = require('meow');
+const keypress = require('keypress');
 const wifi = require('../libs/wifi');
+
+// keypress(process.stdin);
+process.stdin.on('keypress', (ch, key) => {
+  if (key && key.ctrl && key.name === 'c') {
+    process.stdout.write('\nExit')
+    process.exit(0);
+  }
+})
 
 const cli = meow(`
     Usage

@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "keypress": "^0.2.1",
     "meow": "^4.0.0",
     "node-wifi": "^2.0.4",
     "ora": "^2.0.0",
