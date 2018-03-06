@@ -8,7 +8,7 @@ const wifi = require('../libs/wifi');
 // keypress(process.stdin);
 process.stdin.on('keypress', (ch, key) => {
   if (key && key.ctrl && key.name === 'c') {
-    process.stdout.write('\nExit')
+    process.stdout.write('\nExit\n')
     process.exit(0);
   }
 })
