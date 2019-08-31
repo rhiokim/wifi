@@ -28,7 +28,7 @@ module.exports = (flags) => {
     res = res.map(net => {
       return {
         ...net,
-        title: `${net.ssid} ${sigEmoji(net.signal_level)}`,
+        title: `${net.ssid} (${net.security}) ${sigEmoji(net.signal_level)}`,
         value: net.ssid
       }
     })
